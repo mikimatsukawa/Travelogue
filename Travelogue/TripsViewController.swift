@@ -7,23 +7,43 @@
 
 import UIKit
 
-class TripsViewController: UIViewController {
+class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
+    //mark an outlet for the table view
+    
+    @IBOutlet weak var tripsTableView: UITableView!
+    
+    
+    //temp variable
+    var animals = ["fish", "dog"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //table functions:
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return animals.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tripCell", for: indexPath)
+        
+        cell.textLabel?.text = animals[indexPath.row]
+        //Give background Color
+        cell.backgroundColor = UIColor.systemPink
+    
+    
+        return cell
+    }
+    
 }

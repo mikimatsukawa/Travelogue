@@ -19,6 +19,7 @@
 		A60BEB57255CE61800F57078 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60BEB56255CE61800F57078 /* TripsViewController.swift */; };
 		A60BEB5C255CE62300F57078 /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60BEB5B255CE62300F57078 /* LogsViewController.swift */; };
 		A60BEB61255CE63400F57078 /* LogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60BEB60255CE63400F57078 /* LogDetailViewController.swift */; };
+		A6149E30255ED1DF0050FE02 /* CustomTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149E2F255ED1DF0050FE02 /* CustomTableViewCells.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		A60BEB56255CE61800F57078 /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
 		A60BEB5B255CE62300F57078 /* LogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsViewController.swift; sourceTree = "<group>"; };
 		A60BEB60255CE63400F57078 /* LogDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetailViewController.swift; sourceTree = "<group>"; };
+		A6149E2F255ED1DF0050FE02 /* CustomTableViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCells.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				A60BEB60255CE63400F57078 /* LogDetailViewController.swift */,
 				A60BEB2C255CE41C00F57078 /* Assets.xcassets */,
 				A60BEB2E255CE41C00F57078 /* LaunchScreen.storyboard */,
+				A6149E2F255ED1DF0050FE02 /* CustomTableViewCells.swift */,
 				A60BEB31255CE41C00F57078 /* Info.plist */,
 				A60BEB29255CE41B00F57078 /* Travelogue.xcdatamodeld */,
 			);
@@ -276,6 +279,7 @@
 				A60BEB21255CE41B00F57078 /* AppDelegate.swift in Sources */,
 				A60BEB23255CE41B00F57078 /* SceneDelegate.swift in Sources */,
 				A60BEB57255CE61800F57078 /* TripsViewController.swift in Sources */,
+				A6149E30255ED1DF0050FE02 /* CustomTableViewCells.swift in Sources */,
 				A60BEB5C255CE62300F57078 /* LogsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

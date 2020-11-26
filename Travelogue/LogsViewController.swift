@@ -7,7 +7,38 @@
 
 import UIKit
 
-class LogsViewController: UIViewController {
+
+class LogsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
+    //mark the tableview
+    
+    @IBOutlet weak var logTableView: UITableView!
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "logCell", for: indexPath)
+        
+        cell.textLabel?.text = "hahaha"
+        //Give background Color
+        cell.backgroundColor = UIColor.systemPink
+    
+    
+        return cell
+        
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,3 +58,6 @@ class LogsViewController: UIViewController {
     */
 
 }
+
+
+
