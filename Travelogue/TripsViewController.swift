@@ -46,4 +46,38 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
+    @IBAction func addTrip(_ sender: Any) {
+      
+        let alert = UIAlertController(title: "Add Category", message: "Enter new trip name.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Submit", style: UIAlertAction.Style.default, handler: {
+            (alertAction) -> Void in
+            if let textField = alert.textFields?[0], let name = textField.text {
+                let categoryName = name.trimmingCharacters(in: .whitespaces)
+                if (categoryName == "") {
+                    print("no name given for trip ")
+                    return
+                }
+              //print the new trip name
+            print(name)
+            } else {
+                print( "Category not created.\nThe name is not accessible.")
+                return
+            }
+            
+        }))
+        alert.addTextField(configurationHandler: {(textField: UITextField!) in
+            textField.placeholder = "category name"
+            textField.isSecureTextEntry = false
+            
+        })
+        self.present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
+    
+    
+    
+    
 }

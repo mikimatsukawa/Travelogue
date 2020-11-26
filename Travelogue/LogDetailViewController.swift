@@ -8,7 +8,8 @@
 import UIKit
 
 class LogDetailViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+   
+    
     
     @IBOutlet weak var selectedImageView: UIImageView!
     
@@ -26,8 +27,17 @@ class LogDetailViewController: UIViewController,UIImagePickerControllerDelegate,
         super.viewDidLoad()
 
         imagePickerController.delegate = self
+    
         
     }
+    
+    
+    @IBAction func saveLog(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+        
+    }
+    
+    
     
 // photo codes:
     
