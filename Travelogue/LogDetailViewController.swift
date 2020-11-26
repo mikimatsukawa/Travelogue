@@ -74,6 +74,8 @@ class LogDetailViewController: UIViewController,UIImagePickerControllerDelegate,
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             selectedImageView.image = pickedImage
+            selectedImageView.contentMode = .scaleAspectFit
+            
         }
         dismiss(animated: true, completion: nil)
     }

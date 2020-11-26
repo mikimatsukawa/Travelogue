@@ -167,13 +167,8 @@
                                     <action selector="nameChanged:" destination="b0Y-HH-g00" eventType="editingDidEnd" id="eMc-1z-eLF"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kX5-1u-Ivc">
-                                <rect key="frame" x="100" y="167" width="294" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2NC-R5-I5O">
-                                <rect key="frame" x="20" y="588" width="374" height="239"/>
+                                <rect key="frame" x="20" y="349" width="374" height="493"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IeR-Yo-CSr">
                                 <rect key="frame" x="0.0" y="847" width="414" height="49"/>
@@ -190,31 +185,34 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="UKE-sj-N8D">
+                                <rect key="frame" x="70" y="149" width="324" height="216"/>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IXc-bw-RFC"/>
                         <color key="backgroundColor" red="0.86685900079217315" green="1" blue="0.97765018837387951" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kX5-1u-Ivc" firstAttribute="top" secondItem="N3H-ck-mnG" secondAttribute="bottom" constant="25" id="2S2-5g-7Pq"/>
+                            <constraint firstAttribute="trailing" secondItem="UKE-sj-N8D" secondAttribute="trailing" constant="20" id="AWI-dr-I1A"/>
                             <constraint firstItem="Adp-mw-Ni5" firstAttribute="leading" secondItem="IXc-bw-RFC" secondAttribute="leading" constant="20" id="Bzo-Bf-yb9"/>
                             <constraint firstItem="IXc-bw-RFC" firstAttribute="trailing" secondItem="N3H-ck-mnG" secondAttribute="trailing" constant="20" id="Dv5-Jj-BeX"/>
                             <constraint firstItem="IXc-bw-RFC" firstAttribute="trailing" secondItem="lXq-gW-X6b" secondAttribute="trailing" constant="20" id="DvD-FP-rdr"/>
+                            <constraint firstItem="UKE-sj-N8D" firstAttribute="top" secondItem="Adp-mw-Ni5" secondAttribute="bottom" constant="20" id="FXW-0n-ak7"/>
                             <constraint firstItem="N3H-ck-mnG" firstAttribute="top" secondItem="IXc-bw-RFC" secondAttribute="top" constant="20" id="OAd-1Y-1kf"/>
                             <constraint firstItem="N3H-ck-mnG" firstAttribute="leading" secondItem="IXc-bw-RFC" secondAttribute="leading" constant="100" id="Pga-jA-Ekf"/>
                             <constraint firstAttribute="bottom" secondItem="IeR-Yo-CSr" secondAttribute="bottom" id="Qbo-8q-ga5"/>
                             <constraint firstItem="2NC-R5-I5O" firstAttribute="leading" secondItem="IXc-bw-RFC" secondAttribute="leading" constant="20" id="c0G-gf-96o"/>
+                            <constraint firstItem="2NC-R5-I5O" firstAttribute="top" secondItem="Adp-mw-Ni5" secondAttribute="bottom" constant="220" id="d9R-jT-6qX"/>
                             <constraint firstItem="Adp-mw-Ni5" firstAttribute="top" secondItem="IXc-bw-RFC" secondAttribute="top" constant="20" id="erf-EZ-JZf"/>
                             <constraint firstAttribute="trailing" secondItem="IeR-Yo-CSr" secondAttribute="trailing" id="fYW-37-2vo"/>
                             <constraint firstItem="kPM-tk-R0L" firstAttribute="leading" secondItem="IXc-bw-RFC" secondAttribute="leading" constant="20" id="g1A-zH-QNH"/>
                             <constraint firstItem="IXc-bw-RFC" firstAttribute="bottom" secondItem="lXq-gW-X6b" secondAttribute="bottom" constant="250" id="jEj-HE-gNq"/>
-                            <constraint firstItem="kX5-1u-Ivc" firstAttribute="leading" secondItem="IXc-bw-RFC" secondAttribute="leading" constant="100" id="lWl-FN-TcK"/>
-                            <constraint firstItem="IXc-bw-RFC" firstAttribute="trailing" secondItem="kX5-1u-Ivc" secondAttribute="trailing" constant="20" id="pJl-E6-KXb"/>
-                            <constraint firstItem="IXc-bw-RFC" firstAttribute="bottom" secondItem="2NC-R5-I5O" secondAttribute="bottom" constant="35" id="tmw-av-i5X"/>
+                            <constraint firstItem="IXc-bw-RFC" firstAttribute="bottom" secondItem="2NC-R5-I5O" secondAttribute="bottom" constant="20" id="tmw-av-i5X"/>
                             <constraint firstItem="lXq-gW-X6b" firstAttribute="leading" secondItem="IXc-bw-RFC" secondAttribute="leading" constant="20" id="vZV-13-jLg"/>
                             <constraint firstItem="kPM-tk-R0L" firstAttribute="top" secondItem="Adp-mw-Ni5" secondAttribute="bottom" constant="25" id="vlQ-9Y-zc9"/>
                             <constraint firstItem="IXc-bw-RFC" firstAttribute="trailing" secondItem="2NC-R5-I5O" secondAttribute="trailing" constant="20" id="wca-7w-us0"/>
-                            <constraint firstItem="2NC-R5-I5O" firstAttribute="top" secondItem="IXc-bw-RFC" secondAttribute="top" constant="500" id="xlk-hC-cU5"/>
                             <constraint firstItem="IeR-Yo-CSr" firstAttribute="leading" secondItem="IXc-bw-RFC" secondAttribute="leading" id="xva-S3-dLj"/>
                             <constraint firstItem="lXq-gW-X6b" firstAttribute="top" secondItem="kPM-tk-R0L" secondAttribute="bottom" constant="35" id="yae-oz-hgc"/>
+                            <constraint firstItem="UKE-sj-N8D" firstAttribute="leading" secondItem="IXc-bw-RFC" secondAttribute="leading" constant="70" id="z5q-zM-WnQ"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -228,14 +226,13 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="contextText" destination="lXq-gW-X6b" id="u07-B4-eys"/>
-                        <outlet property="dateTextField" destination="kX5-1u-Ivc" id="7cq-Mv-Ejc"/>
                         <outlet property="nameTextField" destination="N3H-ck-mnG" id="nre-Ct-eRU"/>
                         <outlet property="selectedImageView" destination="2NC-R5-I5O" id="9kw-lH-DN5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Cf-LN-0iU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3094" y="30"/>
+            <point key="canvasLocation" x="3092.753623188406" y="29.464285714285712"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qbB-8J-WPB">
