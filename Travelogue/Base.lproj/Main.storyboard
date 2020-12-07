@@ -8,20 +8,44 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Add  New Trip-->
         <scene sceneID="yz1-85-iV1">
             <objects>
                 <viewController id="jCU-0N-THX" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hnA-la-dOz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eJi-O6-5gq">
+                                <rect key="frame" x="15" y="98" width="384" height="74.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Trip Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKF-dC-YpK">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eM9-aW-uhx">
+                                        <rect key="frame" x="0.0" y="40.5" width="384" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hLm-ML-i1L"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eJi-O6-5gq" firstAttribute="leading" secondItem="hLm-ML-i1L" secondAttribute="leading" constant="15" id="Djw-ao-NKk"/>
+                            <constraint firstItem="hLm-ML-i1L" firstAttribute="trailing" secondItem="eJi-O6-5gq" secondAttribute="trailing" constant="15" id="NUP-pR-vrM"/>
+                            <constraint firstItem="eJi-O6-5gq" firstAttribute="top" secondItem="hLm-ML-i1L" secondAttribute="top" constant="10" id="WWU-F4-4s0"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Add  New Trip" id="LmE-N5-POE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="78h-8D-f3S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1275" y="-629"/>
+            <point key="canvasLocation" x="1535" y="-798"/>
         </scene>
         <!--Trips-->
         <scene sceneID="tne-QT-ifu">
@@ -66,6 +90,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="km4-dy-iFs">
                             <connections>
                                 <action selector="addTrip:" destination="BYZ-38-t0r" id="vdT-Z4-0gh"/>
+                                <segue destination="jCU-0N-THX" kind="show" id="BLO-bU-32T"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
