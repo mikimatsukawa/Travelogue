@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
@@ -13,13 +14,38 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tripsTableView: UITableView!
     
+    //variables
+    var trips : [Trip] = []
     
     //temp variable
     var animals = ["fish", "dog"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+       
+        //getting data from coredata
+         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+             print("Cant get appDelegate")
+             return
+         }
+        //DID YOU IMPORT CORE DATA?
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest : NSFetchRequest<Trip> = Trip.fetchRequest()
+        
+        do {
+        //do the fetch
+        trips = try managedContext.fetch(fetchRequest)
+            tripsTableView.reloadData()
+           print("Table fetch reload from core data complete")
+        } catch {
+            //if the do fails
+            print("FETCH FAILED")
+        }
+        
         
     }
     
@@ -30,7 +56,7 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return animals.count
+        return trips.count
     }
     
     
@@ -38,11 +64,11 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "tripCell", for: indexPath)
         
-        cell.textLabel?.text = animals[indexPath.row]
-        //Give background Color
-        cell.backgroundColor = UIColor.systemPink
-    
-    
+        let trip = trips[indexPath.row]
+        
+        //cell.textLabel?.text = animals[indexPath.row]
+        cell.textLabel?.text = trip.tripTitle
+        
         return cell
     }
     

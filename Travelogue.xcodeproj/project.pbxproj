@@ -20,6 +20,11 @@
 		A60BEB5C255CE62300F57078 /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60BEB5B255CE62300F57078 /* LogsViewController.swift */; };
 		A60BEB61255CE63400F57078 /* LogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60BEB60255CE63400F57078 /* LogDetailViewController.swift */; };
 		A6149E30255ED1DF0050FE02 /* CustomTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149E2F255ED1DF0050FE02 /* CustomTableViewCells.swift */; };
+		A6BFB820257EE1F9004F8B3E /* Log+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFB81C257EE1F9004F8B3E /* Log+CoreDataClass.swift */; };
+		A6BFB821257EE1F9004F8B3E /* Log+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFB81D257EE1F9004F8B3E /* Log+CoreDataProperties.swift */; };
+		A6BFB822257EE1F9004F8B3E /* Trip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFB81E257EE1F9004F8B3E /* Trip+CoreDataClass.swift */; };
+		A6BFB823257EE1F9004F8B3E /* Trip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFB81F257EE1F9004F8B3E /* Trip+CoreDataProperties.swift */; };
+		A6BFB82C257EEA67004F8B3E /* NewTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFB82B257EEA67004F8B3E /* NewTripViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +64,11 @@
 		A60BEB5B255CE62300F57078 /* LogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsViewController.swift; sourceTree = "<group>"; };
 		A60BEB60255CE63400F57078 /* LogDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetailViewController.swift; sourceTree = "<group>"; };
 		A6149E2F255ED1DF0050FE02 /* CustomTableViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCells.swift; sourceTree = "<group>"; };
+		A6BFB81C257EE1F9004F8B3E /* Log+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Log+CoreDataClass.swift"; path = "Travelogue/Model/Log+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		A6BFB81D257EE1F9004F8B3E /* Log+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Log+CoreDataProperties.swift"; path = "Travelogue/Model/Log+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		A6BFB81E257EE1F9004F8B3E /* Trip+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Trip+CoreDataClass.swift"; path = "Travelogue/Model/Trip+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		A6BFB81F257EE1F9004F8B3E /* Trip+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Trip+CoreDataProperties.swift"; path = "Travelogue/Model/Trip+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		A6BFB82B257EEA67004F8B3E /* NewTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,16 +119,13 @@
 		A60BEB1F255CE41B00F57078 /* Travelogue */ = {
 			isa = PBXGroup;
 			children = (
+				A60BEB26255CE41B00F57078 /* Main.storyboard */,
+				A60BEB2E255CE41C00F57078 /* LaunchScreen.storyboard */,
 				A60BEB20255CE41B00F57078 /* AppDelegate.swift */,
 				A60BEB22255CE41B00F57078 /* SceneDelegate.swift */,
-				A60BEB24255CE41B00F57078 /* ViewController.swift */,
-				A60BEB26255CE41B00F57078 /* Main.storyboard */,
-				A60BEB56255CE61800F57078 /* TripsViewController.swift */,
-				A60BEB5B255CE62300F57078 /* LogsViewController.swift */,
-				A60BEB60255CE63400F57078 /* LogDetailViewController.swift */,
+				A6BFB81B257EDBC0004F8B3E /* ViewControllers */,
+				A6BFB819257EDB90004F8B3E /* Model */,
 				A60BEB2C255CE41C00F57078 /* Assets.xcassets */,
-				A60BEB2E255CE41C00F57078 /* LaunchScreen.storyboard */,
-				A6149E2F255ED1DF0050FE02 /* CustomTableViewCells.swift */,
 				A60BEB31255CE41C00F57078 /* Info.plist */,
 				A60BEB29255CE41B00F57078 /* Travelogue.xcdatamodeld */,
 			);
@@ -141,6 +148,30 @@
 				A60BEB47255CE41C00F57078 /* Info.plist */,
 			);
 			path = TravelogueUITests;
+			sourceTree = "<group>";
+		};
+		A6BFB819257EDB90004F8B3E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A6BFB81C257EE1F9004F8B3E /* Log+CoreDataClass.swift */,
+				A6BFB81D257EE1F9004F8B3E /* Log+CoreDataProperties.swift */,
+				A6BFB81E257EE1F9004F8B3E /* Trip+CoreDataClass.swift */,
+				A6BFB81F257EE1F9004F8B3E /* Trip+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A6BFB81B257EDBC0004F8B3E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A60BEB24255CE41B00F57078 /* ViewController.swift */,
+				A6BFB82B257EEA67004F8B3E /* NewTripViewController.swift */,
+				A60BEB56255CE61800F57078 /* TripsViewController.swift */,
+				A60BEB5B255CE62300F57078 /* LogsViewController.swift */,
+				A60BEB60255CE63400F57078 /* LogDetailViewController.swift */,
+				A6149E2F255ED1DF0050FE02 /* CustomTableViewCells.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,11 +304,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6BFB822257EE1F9004F8B3E /* Trip+CoreDataClass.swift in Sources */,
 				A60BEB25255CE41B00F57078 /* ViewController.swift in Sources */,
+				A6BFB820257EE1F9004F8B3E /* Log+CoreDataClass.swift in Sources */,
 				A60BEB61255CE63400F57078 /* LogDetailViewController.swift in Sources */,
 				A60BEB2B255CE41B00F57078 /* Travelogue.xcdatamodeld in Sources */,
 				A60BEB21255CE41B00F57078 /* AppDelegate.swift in Sources */,
+				A6BFB823257EE1F9004F8B3E /* Trip+CoreDataProperties.swift in Sources */,
+				A6BFB82C257EEA67004F8B3E /* NewTripViewController.swift in Sources */,
 				A60BEB23255CE41B00F57078 /* SceneDelegate.swift in Sources */,
+				A6BFB821257EE1F9004F8B3E /* Log+CoreDataProperties.swift in Sources */,
 				A60BEB57255CE61800F57078 /* TripsViewController.swift in Sources */,
 				A6149E30255ED1DF0050FE02 /* CustomTableViewCells.swift in Sources */,
 				A60BEB5C255CE62300F57078 /* LogsViewController.swift in Sources */,

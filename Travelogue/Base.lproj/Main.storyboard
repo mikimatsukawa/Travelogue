@@ -11,7 +11,7 @@
         <!--Add  New Trip-->
         <scene sceneID="yz1-85-iV1">
             <objects>
-                <viewController id="jCU-0N-THX" sceneMemberID="viewController">
+                <viewController id="jCU-0N-THX" customClass="NewTripViewController" customModule="Travelogue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hnA-la-dOz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +41,16 @@
                             <constraint firstItem="eJi-O6-5gq" firstAttribute="top" secondItem="hLm-ML-i1L" secondAttribute="top" constant="10" id="WWU-F4-4s0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add  New Trip" id="LmE-N5-POE"/>
+                    <navigationItem key="navigationItem" title="Add  New Trip" id="LmE-N5-POE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="M0R-nd-pyB">
+                            <connections>
+                                <action selector="saveNewTrip:" destination="jCU-0N-THX" id="PQX-NJ-cTV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="newTitleTextField" destination="eM9-aW-uhx" id="ik2-nR-iP3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="78h-8D-f3S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
