@@ -15,9 +15,11 @@ class LogsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var logTableView: UITableView!
     
+    var trip: Trip?
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return trip?.logs?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,9 +32,13 @@ class LogsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "logCell", for: indexPath)
         
-        cell.textLabel?.text = "hahaha"
-        //Give background Color
-        cell.backgroundColor = UIColor.systemPink
+        if let log  = trip?.logs?[indexPath.row] {
+            cell.textLabel?.text = log.title
+        }
+        
+        
+        //cell.textLabel?.text = "hahaha"
+        
     
     
         return cell

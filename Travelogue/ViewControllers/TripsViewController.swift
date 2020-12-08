@@ -103,7 +103,14 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? LogsViewController,
+            let row = tripsTableView.indexPathForSelectedRow?.row  else {
+            return
+        }
+        destination.trip = trips[row]
+        
+    }
     
     
 }
