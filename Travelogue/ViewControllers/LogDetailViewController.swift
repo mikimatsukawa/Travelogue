@@ -9,7 +9,8 @@ import UIKit
 
 class LogDetailViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    
-    var trip: Trip? 
+    var trip: Trip?
+    var log: Log?
     
     @IBOutlet weak var logDate: UIDatePicker!
     @IBOutlet weak var selectedImageView: UIImageView!
@@ -27,6 +28,18 @@ class LogDetailViewController: UIViewController,UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePickerController.delegate = self
+        
+        print(log)
+        
+        if let log = log {
+            
+            nameTextField.text = log.title
+            contextText.text = log.text
+            logDate.date = log.date!
+        
+            //just need to set the image
+        }
+        
     }
     
     @IBAction func saveLog(_ sender: Any) {
@@ -41,17 +54,14 @@ class LogDetailViewController: UIViewController,UIImagePickerControllerDelegate,
             
             do {
                 try log.managedObjectContext?.save()
-                self.navigationController?.popViewController(animated: true)
+        
             } catch {
                 print("cant make log")
             }
+            
+            self.navigationController?.popViewController(animated: true)
         }
-        
-       
-        
-        
-        self.navigationController?.popViewController(animated: true)
-        
+    
     }
     
     

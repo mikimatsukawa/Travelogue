@@ -23,11 +23,12 @@ class NewTripViewController: UIViewController {
         
         do {
             try trip?.managedObjectContext?.save()
-            self.navigationController?.popViewController(animated: true)
+           
         } catch {
             print("Could not save the New trip :/ ")
         }
         
+        self.navigationController?.popViewController(animated: true)
     }
     
     /*

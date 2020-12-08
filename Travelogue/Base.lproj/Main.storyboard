@@ -131,7 +131,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="b0Y-HH-g00" kind="show" id="3SC-4c-8ue"/>
+                                            <segue destination="b0Y-HH-g00" kind="show" identifier="existingLog" id="3SC-4c-8ue"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -153,7 +153,7 @@
                     <navigationItem key="navigationItem" title="Logs" id="y8q-Fp-uCs">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Hmj-9k-X4L">
                             <connections>
-                                <segue destination="b0Y-HH-g00" kind="show" id="9eg-Gz-c7c"/>
+                                <segue destination="b0Y-HH-g00" kind="show" identifier="newLog" id="9eg-Gz-c7c"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

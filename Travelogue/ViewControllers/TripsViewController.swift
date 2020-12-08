@@ -105,13 +105,10 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //delete functions:
     func doDeleteFunction(at indexPath: IndexPath) {
         let trip = trips[indexPath.row]
-        
         guard let managedContext = trip.managedObjectContext else {
             return
         }
-    
         managedContext.delete(trip)
-        
         do {
             try managedContext.save()
             trips.remove(at: indexPath.row)
@@ -120,9 +117,6 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             print("Delete failed: \(error).")
             tripsTableView.reloadData()
         }
-        
-        
-        
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
