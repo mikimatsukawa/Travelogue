@@ -9,8 +9,9 @@ import UIKit
 
 class LogDetailViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    
+    var trip: Trip? 
     
-    
+    @IBOutlet weak var logDate: UIDatePicker!
     @IBOutlet weak var selectedImageView: UIImageView!
     
     @IBOutlet weak var nameTextField: UITextField!
@@ -25,14 +26,30 @@ class LogDetailViewController: UIViewController,UIImagePickerControllerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         imagePickerController.delegate = self
-    
-        
     }
     
-    
     @IBAction func saveLog(_ sender: Any) {
+        
+        let name = nameTextField.text
+        let text = contextText.text
+        let date = logDate.date
+        
+        if let log = Log(title: name, date: date, text: text) {
+            //need to assing to the upper catatgory
+            trip?.addToRawLogs(log)
+            
+            do {
+                try log.managedObjectContext?.save()
+                self.navigationController?.popViewController(animated: true)
+            } catch {
+                print("cant make log")
+            }
+        }
+        
+       
+        
+        
         self.navigationController?.popViewController(animated: true)
         
     }
