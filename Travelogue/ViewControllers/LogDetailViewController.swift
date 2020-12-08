@@ -48,21 +48,74 @@ class LogDetailViewController: UIViewController,UIImagePickerControllerDelegate,
         let text = contextText.text
         let date = logDate.date
         
-        if let log = Log(title: name, date: date, text: text) {
+        
+        if log == nil  {
+            //log not yet exists...
+            if let trip = trip {
+                log = Log(title: name, date: date, text: text)
+            }
+        } else {
+            if let trip = trip {
+                log?.setValue(contextText.text, forKey: "text")
+                log?.setValue(nameTextField.text, forKey: "title")
+                
+                //log?.setValue( logDate.date , forKey: "date")
+            }
+        }
+        
+        if let log = log {
             //need to assing to the upper catatgory
-            trip?.addToRawLogs(log)
             
+            trip?.addToRawLogs(log)
+        
             do {
                 try log.managedObjectContext?.save()
-        
             } catch {
                 print("cant make log")
             }
-            
-            self.navigationController?.popViewController(animated: true)
+
+        } else {
+            print("save failed")
         }
     
+        
+        self.navigationController?.popViewController(animated: true)
+        
     }
+    
+    /*
+     example code:
+     
+     if document == nil {
+         // document doesn't exist, create new one
+         if let category = category {
+             document = Document(name: documentName, content: content, category: category)
+         }
+     } else {
+         // document exists, update existing one
+         if let category = category {
+             document?.update(name: documentName, content: content, category: category)
+         }
+     }
+     
+     if let document = document {
+         do {
+             let managedContext = document.managedObjectContext
+             try managedContext?.save()
+         } catch {
+             alertNotifyUser(message: "Document not saved.\nAn error occured saving context.")
+         }
+     } else {
+         alertNotifyUser(message: "Document not saved.\nA Document entity could not be created.")
+     }
+     
+     
+     
+     */
+    
+    
+    
+    
     
     
     
@@ -115,3 +168,34 @@ class LogDetailViewController: UIViewController,UIImagePickerControllerDelegate,
     
 
 }
+
+
+/*
+ 
+ original save
+ 
+ @IBAction func saveLog(_ sender: Any) {
+     
+     let name = nameTextField.text
+     let text = contextText.text
+     let date = logDate.date
+     
+     if let log = Log(title: name, date: date, text: text) {
+         //need to assing to the upper catatgory
+         trip?.addToRawLogs(log)
+     
+         do {
+             try log.managedObjectContext?.save()
+         } catch {
+             print("cant make log")
+         }
+
+         self.navigationController?.popViewController(animated: true)
+     }
+ 
+ }
+ 
+ 
+ 
+ 
+ */
