@@ -102,15 +102,43 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
+    //delete functions:
+    func doDeleteFunction(at indexPath: IndexPath) {
+        let trip = trips[indexPath.row]
+        
+        guard let managedContext = trip.managedObjectContext else {
+            return
+        }
     
+        managedContext.delete(trip)
+        
+        do {
+            try managedContext.save()
+            trips.remove(at: indexPath.row)
+            tripsTableView.deleteRows(at: [indexPath], with: .automatic)
+        } catch {
+            print("Delete failed: \(error).")
+            tripsTableView.reloadData()
+        }
+        
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            doDeleteFunction(at: indexPath)
+        }
+        
+    }
+    
+    //segue:
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? LogsViewController,
             let row = tripsTableView.indexPathForSelectedRow?.row  else {
             return
         }
         destination.trip = trips[row]
-        
     }
     
-    
-}
+} //end of file
