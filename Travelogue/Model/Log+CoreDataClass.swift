@@ -21,9 +21,7 @@ public class Log: NSManagedObject {
         }
     }
     
-    
-    /*
-    var logImage: UIImage? {
+    var photoImage: UIImage? {
         get {
             if let imageData = image as Data? {
                 return UIImage(data: imageData)
@@ -32,8 +30,25 @@ public class Log: NSManagedObject {
             }
         }
         set {
-            if let logImage = newValue {
-                image = convertImageToNSData(image: logImage)
+            if let photoImage = newValue {
+                let imageData = photoImage.pngData() as NSData?
+            }
+        }
+    }
+    
+    
+    /* exmaple
+     var image: UIImage? {
+        get {
+            if let imageData = rawImage as Data? {
+                return UIImage(data: imageData)
+            } else {
+                return nil
+            }
+        }
+        set {
+            if let image = newValue {
+                rawImage = convertImageToNSData(image: image)
             }
         }
     }
@@ -41,7 +56,8 @@ public class Log: NSManagedObject {
     
     
     
-    convenience init?(title: String?, date: Date?, text: String?) {
+    
+    convenience init?(title: String?, date: Date?, text: String?, photoImage: UIImage?) {
         
         let appDelegate = UIApplication.shared.delegate as? AppDelegate  //UIKit is needed to access UIApplication
         guard let managedContext = appDelegate?.persistentContainer.viewContext
@@ -54,7 +70,9 @@ public class Log: NSManagedObject {
         self.date = date
         self.text = text
         
-        
+        if let photoImage = photoImage {
+            self.image = photoImage.pngData()
+        }
     }
     
    

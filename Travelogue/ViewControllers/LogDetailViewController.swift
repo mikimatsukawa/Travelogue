@@ -36,6 +36,7 @@ class LogDetailViewController: UIViewController,UIImagePickerControllerDelegate,
             nameTextField.text = log.title
             contextText.text = log.text
             logDate.date = log.date!
+            selectedImageView.image = log.photoImage
         
             //just need to set the image
         }
@@ -47,19 +48,27 @@ class LogDetailViewController: UIViewController,UIImagePickerControllerDelegate,
         let name = nameTextField.text
         let text = contextText.text
         let date = logDate.date
+        let image = selectedImageView.image
         
         
         if log == nil  {
             //log not yet exists...
             if let trip = trip {
-                log = Log(title: name, date: date, text: text)
+                log = Log(title: name, date: date, text: text, photoImage: image )
             }
         } else {
             if let trip = trip {
                 log?.setValue(contextText.text, forKey: "text")
                 log?.setValue(nameTextField.text, forKey: "title")
-                
+                //date
                 log?.setValue( logDate.date , forKey: "rawDate")
+                
+                //need to convert to nsdata
+                //log?.setValue(selectedImageView.image, forKey: "image")
+                
+                let imageData: NSData = selectedImageView.image!.pngData()! as NSData
+                log?.setValue(imageData, forKey: "image")
+                
             }
         }
         
