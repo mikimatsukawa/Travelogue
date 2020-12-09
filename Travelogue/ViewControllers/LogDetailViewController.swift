@@ -59,7 +59,7 @@ class LogDetailViewController: UIViewController,UIImagePickerControllerDelegate,
                 log?.setValue(contextText.text, forKey: "text")
                 log?.setValue(nameTextField.text, forKey: "title")
                 
-                //log?.setValue( logDate.date , forKey: "date")
+                log?.setValue( logDate.date , forKey: "rawDate")
             }
         }
         
