@@ -121,7 +121,27 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            doDeleteFunction(at: indexPath)
+            
+            //doDeleteFunction(at: indexPath)
+            
+            let alert = UIAlertController(title: "Delete Category", message: " This trip contains saved logs. Do you want to delete it all?", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {
+                (alertAction) -> Void in
+                // handle cancellation of deletion
+                //self.categoriesTableView.reloadData()
+                print("delete request cancelled")
+            }))
+            alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.destructive, handler: {
+                (alertAction) -> Void in
+                // handle deletion here
+                //self.deleteCategory(at: indexPath)
+                print("delete trip requested")
+                self.doDeleteFunction(at: indexPath)
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
+            
+            
         }
         
     }
